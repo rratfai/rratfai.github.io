@@ -19,7 +19,6 @@
     body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 18px; line-height: 1.7; }
     .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
 
-    /* Nav */
     nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 100; padding: 0.75rem 0; }
     nav .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .nav-name { font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; }
@@ -27,7 +26,6 @@
     .nav-links a { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* Header */
     header { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
     .header-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
     .header-text h1 { font-size: 2.8rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
@@ -41,22 +39,18 @@
     .btn-secondary:hover { background: var(--tag-bg); color: var(--text); }
     .avatar { width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--rule); object-fit: cover; object-position: center top; display: block; }
 
-    /* Sections */
     section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
     section.visible { opacity: 1; transform: translateY(0); }
     .section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem; }
 
-    /* Research Interests */
     .interests-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag { background: var(--tag-bg); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; padding: 0.35rem 0.75rem; color: var(--text); }
 
-    /* Papers */
     .paper-list { display: flex; flex-direction: column; gap: 2rem; }
     .paper { display: grid; grid-template-columns: auto 1fr; gap: 0 1.2rem; align-items: start; }
     .paper-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding-top: 0.25rem; white-space: nowrap; }
     .paper-title { font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; line-height: 1.4; }
     .paper-authors { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 0.3rem; }
-    .paper-venue { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.5rem; }
     .paper-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
     .paper-link { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
     .paper-link:hover { border-color: var(--accent); }
@@ -64,16 +58,13 @@
     .section-divider { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 1.6rem 0 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
     .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
 
-    /* Code */
     .coming-soon { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--muted); padding: 1.5rem; border: 1px dashed var(--rule); text-align: center; }
 
-    /* Contact */
     .contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .contact-item p { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.3rem; text-transform: uppercase; }
     .contact-item a, .contact-item span { font-size: 1rem; color: var(--text); text-decoration: none; }
     .contact-item a:hover { color: var(--accent); }
 
-    /* Footer */
     footer { padding: 2rem 0; text-align: center; }
     footer p { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; color: var(--muted); }
 
@@ -102,7 +93,6 @@
     .cv-statement { font-size: 0.95rem; color: var(--muted); font-style: italic; line-height: 1.65; border-left: 2px solid var(--accent-light); padding-left: 1rem; margin-bottom: 1.8rem; }
 
     @media (max-width: 600px) {
-      /* Layout */
       .container { padding: 0 1.2rem; }
       .header-grid { grid-template-columns: 1fr; }
       .avatar { order: -1; width: 80px; height: 80px; margin-bottom: 1rem; }
@@ -111,29 +101,13 @@
       .header-text p { font-size: 0.95rem; }
       .header-links { gap: 0.5rem; }
       .btn { font-size: 0.62rem; padding: 0.45rem 0.8rem; }
-
-      /* Nav */
       .nav-links { gap: 0.8rem; }
       .nav-links a { font-size: 0.62rem; }
-
-      /* Papers */
       .paper { grid-template-columns: 1fr; }
       .paper-year { margin-bottom: 0.2rem; }
-
-      /* Contact */
       .contact-block { grid-template-columns: 1fr; gap: 1.2rem; }
-
-      /* CV Modal */
       .modal-overlay { padding: 0; align-items: flex-end; }
-      .modal {
-        max-height: 92vh;
-        max-width: 100%;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-        padding: 1.8rem 1.4rem;
-      }
+      .modal { max-height: 92vh; max-width: 100%; border-radius: 0; border-left: none; border-right: none; border-bottom: none; padding: 1.8rem 1.4rem; }
       .modal-close { margin: -1rem -1rem 1rem 0; }
       .cv-entry { grid-template-columns: 1fr; }
       .cv-entry-date { margin-bottom: 0.15rem; }
@@ -172,7 +146,7 @@
           <div class="header-links">
             <button onclick="openCV()" class="btn btn-primary">View CV</button>
             <a href="#papers" class="btn btn-secondary">Working Papers</a>
-            <a href="/cdn-cgi/l/email-protection#285a4d4349065a495c4e49410e0b1e1c135d4641054049454a5d5a4f064c4d" class="btn btn-secondary">Email</a>
+            <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="btn btn-secondary">Email</a>
           </div>
         </div>
         <div>
@@ -271,7 +245,7 @@
       <div class="contact-block">
         <div class="contact-item">
           <p>Email</p>
-          <a href="/cdn-cgi/l/email-protection#e290878983cc90839684838bc4c1d4d6d9978c8bcf8a838f80979085cc8687">reka.ratfai&#64;uni-hamburg.de</a>
+          <a href="mailto:reka.ratfai&#64;uni-hamburg.de">reka.ratfai&#64;uni-hamburg.de</a>
         </div>
         <div class="contact-item">
           <p>Office</p>
@@ -284,7 +258,7 @@
         </div>
         <div class="contact-item">
           <p>CV</p>
-          <a href="#" onclick="openCV(); return false;">View CV →</a>
+          <a href="#" onclick="openCV(); return false;">View CV &#8594;</a>
         </div>
       </div>
     </div>
@@ -292,14 +266,14 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Réka Rátfai · University of Hamburg · Last updated: February 2026</p>
+      <p>&#169; 2026 Réka Rátfai · University of Hamburg · Last updated: February 2026</p>
     </div>
   </footer>
 
   <!-- CV Modal -->
   <div class="modal-overlay" id="cv-modal">
     <div class="modal" role="dialog" aria-modal="true" aria-label="Curriculum Vitae">
-      <button class="modal-close" onclick="closeCV()">✕ Close</button>
+      <button class="modal-close" onclick="closeCV()">&#10005; Close</button>
 
       <div class="cv-name">Réka Rátfai</div>
       <div class="cv-tagline">PhD Candidate &amp; Research Associate · University of Hamburg</div>
@@ -333,7 +307,7 @@
             <div class="cv-entry-title">MSc Quantitative Economics</div>
             <div class="cv-entry-sub">Aarhus University · IMSQE (Econometrics &amp; Statistics track)</div>
             <div class="cv-entry-body">
-              Highly selective international research master's (20 students admitted); home institution of CREATES.
+              Highly selective international research master&#39;s (20 students admitted); home institution of CREATES.
               33% of coursework at PhD level. Thesis: <em>Forecasting Gas Prices with the GAS Model</em>
               (Generalized Autoregressive Score).
             </div>
@@ -345,9 +319,7 @@
           <div>
             <div class="cv-entry-title">BSc Applied Economics</div>
             <div class="cv-entry-sub">Eötvös Loránd University (ELTE), Budapest</div>
-            <div class="cv-entry-body">
-              Graduated with distinction.
-            </div>
+            <div class="cv-entry-body">Graduated with distinction.</div>
           </div>
         </div>
       </div>
@@ -410,22 +382,6 @@
       </div>
 
       <div class="cv-section">
-        <div class="cv-section-title">Languages &amp; Skills</div>
-        <div class="cv-skills-grid">
-          <div class="cv-skill-row"><span class="cv-skill-name">Hungarian</span><span class="cv-skill-level">Native</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">R &amp; Shiny</span><span class="cv-skill-level">Advanced</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">English</span><span class="cv-skill-level">Advanced</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">Python</span><span class="cv-skill-level">Advanced</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">German</span><span class="cv-skill-level">C1</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">Matlab</span><span class="cv-skill-level">Advanced</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">Danish</span><span class="cv-skill-level">Elementary</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">MS Office / VBA</span><span class="cv-skill-level">Proficient</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">Bloomberg / Reuters</span><span class="cv-skill-level">Proficient</span></div>
-          <div class="cv-skill-row"><span class="cv-skill-name">Datastream</span><span class="cv-skill-level">Proficient</span></div>
-        </div>
-      </div>
-
-      <div class="cv-section">
         <div class="cv-section-title">Awards &amp; Honours</div>
 
         <div class="cv-entry">
@@ -445,7 +401,6 @@
             <div class="cv-entry-body">National prize awarded by the Hungarian Society of Economics for the best economics paper at Bachelor level.</div>
           </div>
         </div>
-
       </div>
 
       <div class="cv-section">
@@ -467,13 +422,28 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="cv-section">
+        <div class="cv-section-title">Languages &amp; Skills</div>
+        <div class="cv-skills-grid">
+          <div class="cv-skill-row"><span class="cv-skill-name">Hungarian</span><span class="cv-skill-level">Native</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">R &amp; Shiny</span><span class="cv-skill-level">Advanced</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">English</span><span class="cv-skill-level">Advanced</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">Python</span><span class="cv-skill-level">Advanced</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">German</span><span class="cv-skill-level">C1</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">Matlab</span><span class="cv-skill-level">Advanced</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">Danish</span><span class="cv-skill-level">Elementary</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">MS Office / VBA</span><span class="cv-skill-level">Proficient</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">Bloomberg / Reuters</span><span class="cv-skill-level">Proficient</span></div>
+          <div class="cv-skill-row"><span class="cv-skill-name">Datastream</span><span class="cv-skill-level">Proficient</span></div>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     function openCV() {
       document.getElementById("cv-modal").classList.add("open");
       document.body.style.overflow = "hidden";
@@ -492,4 +462,11 @@
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (
+        if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
