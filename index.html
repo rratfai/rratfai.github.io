@@ -68,6 +68,14 @@
     footer { padding: 2rem 0; text-align: center; }
     footer p { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; color: var(--muted); }
 
+    /* Job Market Banner */
+    .jm-banner { background: var(--accent); color: #fff; padding: 0.85rem 0; text-align: center; }
+    .jm-banner .container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    .jm-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.18); padding: 0.2rem 0.55rem; border-radius: 2px; white-space: nowrap; }
+    .jm-text { font-family: var(--serif); font-size: 0.98rem; letter-spacing: 0.01em; }
+    .jm-cta { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); text-decoration: none; white-space: nowrap; transition: border-color 0.2s; }
+    .jm-cta:hover { border-color: #fff; }
+
     /* CV Modal */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(20,20,18,0.55); z-index: 1000; align-items: center; justify-content: center; padding: 1.5rem; backdrop-filter: blur(3px); }
     .modal-overlay.open { display: flex; }
@@ -131,6 +139,14 @@
       </ul>
     </div>
   </nav>
+
+  <div class="jm-banner">
+    <div class="container">
+      <span class="jm-label">2026 Job Market</span>
+      <span class="jm-text">I am on the European Job Market this year.</span>
+      <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="jm-cta">Get in touch &#8594;</a>
+    </div>
+  </div>
 
   <header id="about">
     <div class="container">
