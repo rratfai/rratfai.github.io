@@ -31,7 +31,8 @@
     .header-text h1 { font-size: 2.8rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
     .header-text .role { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
     .header-text p { color: var(--muted); font-size: 1.05rem; max-width: 480px; }
-    .header-links { display: flex; gap: 0.8rem; margin-top: 1.6rem; flex-wrap: wrap; }
+    .header-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
+    .header-links { display: flex; gap: 0.8rem; margin-top: 1.4rem; flex-wrap: wrap; }
     .btn { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1rem; border: 1px solid currentColor; text-decoration: none; cursor: pointer; background: none; transition: background 0.2s, color 0.2s; display: inline-block; }
     .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn-primary:hover { background: #1e3a6a; }
@@ -43,8 +44,7 @@
     section.visible { opacity: 1; transform: translateY(0); }
     .section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem; }
 
-    .interests-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag { background: var(--tag-bg); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; padding: 0.35rem 0.75rem; color: var(--text); }
+    .tag { background: var(--tag-bg); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.04em; padding: 0.3rem 0.65rem; color: var(--text); }
 
     .paper-list { display: flex; flex-direction: column; gap: 2rem; }
     .paper { display: grid; grid-template-columns: 6rem 1fr; gap: 0 1.2rem; align-items: start; }
@@ -103,7 +103,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#conferences">Conferences</a></li>
-        <li><a href="#papers">Papers</a></li>
         <li><a href="#code">Code</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -130,9 +129,21 @@
             with applications in macroeconomics, asset pricing, and macro-finance. More broadly, I am interested
             in any field that can benefit from continuous-time modelling and real-time statistical inference.
           </p>
+          <div class="header-tags">
+            <span class="tag">Macroeconomic Theory</span>
+            <span class="tag">FTPL</span>
+            <span class="tag">New-Keynesian Modelling</span>
+            <span class="tag">DSGE</span>
+            <span class="tag">Linear Filtering</span>
+            <span class="tag">Non-Linear Extensions</span>
+            <span class="tag">Real-Time Filtering</span>
+            <span class="tag">Estimation Theory</span>
+            <span class="tag">Stochastic Systems</span>
+            <span class="tag">Continuous-Time Methods</span>
+          </div>
           <div class="header-links">
-            <a href="CV_Reka_Ratfai.pdf" id="cv-link" class="btn btn-primary" target="_blank">View CV</a>
-            <a href="#papers" class="btn btn-secondary">Working Papers</a>
+            <a href="CV_Reka_Ratfai.pdf" class="btn btn-primary" target="_blank">View CV</a>
+            <a href="#research" class="btn btn-secondary">Research</a>
             <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="btn btn-secondary">Email</a>
           </div>
         </div>
@@ -145,18 +156,67 @@
 
   <section id="research">
     <div class="container">
-      <p class="section-label">Research Interests</p>
-      <div class="interests-list">
-        <span class="tag">Macroeconomic Theory</span>
-        <span class="tag">FTPL</span>
-        <span class="tag">New-Keynesian Modelling</span>
-        <span class="tag">DSGE</span>
-        <span class="tag">Linear Filtering</span>
-        <span class="tag">Non-Linear Extensions</span>
-        <span class="tag">Real-Time Filtering</span>
-        <span class="tag">Estimation Theory</span>
-        <span class="tag">Stochastic Systems</span>
-        <span class="tag">Continuous-Time Methods</span>
+      <p class="section-label">Research</p>
+      <div class="paper-list">
+
+        <div class="paper" id="jmp">
+          <span class="paper-year">2026</span>
+          <div>
+            <div class="paper-title">
+              Real-Time Recovery of Structural Shocks from High-Frequency Data
+              <span class="jmp-badge">Job Market Paper</span>
+            </div>
+            <div class="paper-authors">Réka Rátfai</div>
+            <div class="paper-links">
+              <a href="RealTime_Tracker.pdf" class="paper-link" target="_blank">PDF</a>
+              <a href="https://ssrn.com/abstract=7374859" class="paper-link" target="_blank">SSRN</a>
+              <a href="https://dx.doi.org/10.2139/ssrn.7374859" class="paper-link" target="_blank">DOI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper">
+          <span class="paper-year">2026</span>
+          <div>
+            <div class="paper-title">
+              What Is in a Flow? Real-Time Filtering of Mixed Stock&#8211;Flow Systems. A Technical Note
+              <span class="status-badge">Technical Note</span>
+            </div>
+            <div class="paper-authors">Réka Rátfai</div>
+            <div class="paper-links">
+              <a href="technical_note.pdf" class="paper-link" target="_blank">PDF</a>
+              <a href="https://ssrn.com/abstract=7370661" class="paper-link" target="_blank">SSRN</a>
+              <a href="https://dx.doi.org/10.2139/ssrn.7370661" class="paper-link" target="_blank">DOI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider">Work in Progress</div>
+
+        <div class="paper">
+          <span class="paper-year">—</span>
+          <div>
+            <div class="paper-title">
+              Resurrecting the New Keynesian Framework: A Linear Kalman&#8211;Bucy Approach
+              <span class="status-badge">In Progress</span>
+            </div>
+            <div class="paper-authors">Juan-Carlos Parra-Alvarez, Olaf Posch, Réka Rátfai</div>
+            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
+          </div>
+        </div>
+
+        <div class="paper">
+          <span class="paper-year">—</span>
+          <div>
+            <div class="paper-title">
+              Term Structure in the FTPL Model
+              <span class="status-badge">In Progress</span>
+            </div>
+            <div class="paper-authors">Olaf Posch, Réka Rátfai</div>
+            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -199,77 +259,6 @@
             <div class="paper-title">CFE-CMStatistics 2026 <span class="status-badge">Upcoming</span></div>
             <div class="paper-authors">International Conference on Computational and Financial Econometrics &amp; Computational and Methodological Statistics</div>
             <div class="paper-venue">Berlin</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="papers">
-    <div class="container">
-      <p class="section-label">Publications &amp; Working Papers</p>
-      <div class="paper-list">
-
-        <div class="section-divider">Working Papers</div>
-
-        <div class="paper" id="jmp">
-          <span class="paper-year">2026</span>
-          <div>
-            <div class="paper-title">
-              Real-Time Recovery of Structural Shocks from High-Frequency Data
-              <span class="jmp-badge">Job Market Paper</span>
-            </div>
-            <div class="paper-authors">Réka Rátfai</div>
-            <div class="paper-links">
-              <a href="RealTime_Tracker.pdf" class="paper-link" target="_blank">PDF</a>
-              <a href="https://ssrn.com/abstract=7374859" class="paper-link" target="_blank">SSRN</a>
-              <a href="https://dx.doi.org/10.2139/ssrn.7374859" class="paper-link" target="_blank">DOI</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-divider">Technical Notes</div>
-
-        <div class="paper">
-          <span class="paper-year">2026</span>
-          <div>
-            <div class="paper-title">
-              What Is in a Flow? Real-Time Filtering of Mixed Stock&#8211;Flow Systems. A Technical Note
-              <span class="status-badge">Technical Note</span>
-            </div>
-            <div class="paper-authors">Réka Rátfai</div>
-            <div class="paper-links">
-              <a href="technical_note.pdf" class="paper-link" target="_blank">PDF</a>
-              <a href="https://ssrn.com/abstract=7370661" class="paper-link" target="_blank">SSRN</a>
-              <a href="https://dx.doi.org/10.2139/ssrn.7370661" class="paper-link" target="_blank">DOI</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-divider">Work in Progress</div>
-
-        <div class="paper">
-          <span class="paper-year">—</span>
-          <div>
-            <div class="paper-title">
-              Resurrecting the New Keynesian Framework: A Linear Kalman&#8211;Bucy Approach
-              <span class="status-badge">In Progress</span>
-            </div>
-            <div class="paper-authors">Juan-Carlos Parra-Alvarez, Olaf Posch, Réka Rátfai</div>
-            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
-          </div>
-        </div>
-
-        <div class="paper">
-          <span class="paper-year">—</span>
-          <div>
-            <div class="paper-title">
-              Term Structure in the FTPL Model
-              <span class="status-badge">In Progress</span>
-            </div>
-            <div class="paper-authors">Olaf Posch, Réka Rátfai</div>
-            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
           </div>
         </div>
 
