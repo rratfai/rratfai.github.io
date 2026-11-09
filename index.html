@@ -16,91 +16,104 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 18px; line-height: 1.7; }
-    .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+    body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 17px; line-height: 1.7; }
 
-    nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 100; padding: 0.75rem 0; }
-    nav .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    /* ── Nav ── */
+    nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 100; padding: 0.75rem 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .nav-name { font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    header { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
-    .header-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
-    .header-text h1 { font-size: 2.8rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
-    .header-text .role { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
-    .header-text p { color: var(--muted); font-size: 1.05rem; max-width: 480px; }
-    .header-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
-    .header-links { display: flex; gap: 0.8rem; margin-top: 1.4rem; flex-wrap: wrap; }
-    .btn { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1rem; border: 1px solid currentColor; text-decoration: none; cursor: pointer; background: none; transition: background 0.2s, color 0.2s; display: inline-block; }
+    /* ── Banner ── */
+    .jm-banner { background: var(--accent); color: #fff; padding: 0.85rem 2rem; text-align: center; }
+    .jm-banner-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+    .jm-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.18); padding: 0.2rem 0.55rem; border-radius: 2px; }
+    .jm-text { font-family: var(--serif); font-size: 0.95rem; }
+    .jm-cta { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); text-decoration: none; transition: border-color 0.2s; }
+    .jm-cta:hover { border-color: #fff; }
+
+    /* ── Two-column layout ── */
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    .two-col { display: grid; grid-template-columns: 320px 1fr; gap: 0; min-height: calc(100vh - 90px); }
+
+    /* Left sidebar */
+    .sidebar { padding: 3.5rem 2.5rem 3.5rem 0; border-right: 1px solid var(--rule); position: sticky; top: 56px; height: fit-content; }
+    .avatar { width: 90px; height: 90px; border-radius: 50%; border: 2px solid var(--rule); object-fit: cover; object-position: center top; display: block; margin-bottom: 1.4rem; }
+    .sidebar h1 { font-size: 1.9rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
+    .sidebar .role { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.3rem; line-height: 1.6; }
+    .sidebar .bio { color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.2rem; }
+    .sidebar-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.4rem; }
+    .tag { background: var(--tag-bg); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.04em; padding: 0.25rem 0.6rem; color: var(--text); }
+    .sidebar-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .btn { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1rem; border: 1px solid currentColor; text-decoration: none; cursor: pointer; background: none; transition: background 0.2s, color 0.2s; display: inline-block; text-align: center; }
     .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn-primary:hover { background: #1e3a6a; }
     .btn-secondary { color: var(--muted); }
     .btn-secondary:hover { background: var(--tag-bg); color: var(--text); }
-    .avatar { width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--rule); object-fit: cover; object-position: center top; display: block; }
 
-    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    section.visible { opacity: 1; transform: translateY(0); }
-    .section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem; }
+    /* Right main column */
+    .main-col { padding: 3.5rem 0 3.5rem 3rem; }
 
-    .tag { background: var(--tag-bg); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.04em; padding: 0.3rem 0.65rem; color: var(--text); }
+    /* ── Sections (full-width, below two-col) ── */
+    .full-width { border-top: 1px solid var(--rule); padding: 3.5rem 0; }
+    .full-width:last-of-type { border-bottom: 1px solid var(--rule); }
 
+    .section-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem; }
+
+    /* ── Papers ── */
     .paper-list { display: flex; flex-direction: column; gap: 2rem; }
-    .paper { display: grid; grid-template-columns: 6rem 1fr; gap: 0 1.2rem; align-items: start; }
-    .paper-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding-top: 0.25rem; white-space: nowrap; }
-    .paper-title { font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; line-height: 1.4; }
-    .paper-authors { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .paper { display: grid; grid-template-columns: 5rem 1fr; gap: 0 1.2rem; align-items: start; }
+    .paper-year { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); padding-top: 0.22rem; white-space: nowrap; }
+    .paper-title { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; line-height: 1.4; }
+    .paper-authors { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.3rem; }
     .paper-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .paper-link { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+    .paper-link { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
     .paper-link:hover { border-color: var(--accent); }
-    .status-badge { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 0.15rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; }
-    .jmp-badge { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.15rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; }
-    .section-divider { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 1.6rem 0 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .status-badge { display: inline-block; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 0.12rem 0.45rem; margin-left: 0.5rem; vertical-align: middle; }
+    .jmp-badge { display: inline-block; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.12rem 0.45rem; margin-left: 0.5rem; vertical-align: middle; }
+    .section-divider { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 1.6rem 0 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
     .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
 
-    .coming-soon { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--muted); padding: 1.5rem; border: 1px dashed var(--rule); text-align: center; }
+    .coming-soon { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); padding: 1.5rem; border: 1px dashed var(--rule); text-align: center; }
 
+    /* ── Contact ── */
     .contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .contact-item p { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.3rem; text-transform: uppercase; }
+    .contact-item p { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.3rem; text-transform: uppercase; }
     .contact-item a, .contact-item span { font-size: 1rem; color: var(--text); text-decoration: none; }
     .contact-item a:hover { color: var(--accent); }
 
-    footer { padding: 2rem 0; text-align: center; }
-    footer p { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; color: var(--muted); }
+    footer { padding: 2rem; text-align: center; }
+    footer p { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.06em; color: var(--muted); }
 
-    /* Job Market Banner */
-    .jm-banner { background: var(--accent); color: #fff; padding: 0.85rem 0; text-align: center; }
-    .jm-banner .container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
-    .jm-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.18); padding: 0.2rem 0.55rem; border-radius: 2px; white-space: nowrap; }
-    .jm-text { font-family: var(--serif); font-size: 0.98rem; letter-spacing: 0.01em; }
-    .jm-cta { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); text-decoration: none; white-space: nowrap; transition: border-color 0.2s; }
-    .jm-cta:hover { border-color: #fff; }
+    /* ── Fade-in for full-width sections ── */
+    .full-width { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .full-width.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 600px) {
-      .container { padding: 0 1.2rem; }
-      .header-grid { grid-template-columns: 1fr; }
-      .avatar { order: -1; width: 80px; height: 80px; margin-bottom: 1rem; }
-      header { padding: 2.5rem 0 2rem; }
-      .header-text h1 { font-size: 1.9rem; }
-      .header-text p { font-size: 0.95rem; }
-      .header-links { gap: 0.5rem; }
-      .btn { font-size: 0.62rem; padding: 0.45rem 0.8rem; }
-      .nav-links { gap: 0.8rem; }
-      .nav-links a { font-size: 0.62rem; }
+    /* ── Mobile ── */
+    @media (max-width: 720px) {
+      nav { padding: 0.75rem 1.2rem; }
+      .page-wrap { padding: 0 1.2rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .sidebar { position: static; border-right: none; border-bottom: 1px solid var(--rule); padding: 2.5rem 0 2rem; }
+      .main-col { padding: 2.5rem 0; }
+      .full-width { padding: 2.5rem 0; }
+      .sidebar h1 { font-size: 1.7rem; }
       .paper { grid-template-columns: 1fr; }
       .paper-year { margin-bottom: 0.2rem; }
       .contact-block { grid-template-columns: 1fr; gap: 1.2rem; }
+      .sidebar-links { flex-direction: row; flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="container">
+    <div class="nav-inner">
       <a class="nav-name" href="#">Réka Rátfai</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#conferences">Conferences</a></li>
         <li><a href="#code">Code</a></li>
@@ -110,119 +123,116 @@
   </nav>
 
   <div class="jm-banner">
-    <div class="container">
+    <div class="jm-banner-inner">
       <span class="jm-label">2026 Job Market</span>
       <span class="jm-text">I am on the European Job Market this year.</span>
       <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="jm-cta">Get in touch &#8594;</a>
     </div>
   </div>
 
-  <header id="about">
-    <div class="container">
-      <div class="header-grid">
-        <div class="header-text">
-          <h1>Réka Rátfai</h1>
-          <p class="role">PhD Candidate &amp; Research Associate · Chair of Methods in Economics · University of Hamburg</p>
-          <p>
-            I am a PhD Candidate at the University of Hamburg, expected to complete my dissertation in 2026.
-            My research develops continuous-time methods and stochastic calculus to advance economic filtering techniques,
-            with applications in macroeconomics, asset pricing, and macro-finance. More broadly, I am interested
-            in any field that can benefit from continuous-time modelling and real-time statistical inference.
-          </p>
-          <div class="header-tags">
-            <span class="tag">Macroeconomic Theory</span>
-            <span class="tag">FTPL</span>
-            <span class="tag">New-Keynesian Modelling</span>
-            <span class="tag">DSGE</span>
-            <span class="tag">Linear Filtering</span>
-            <span class="tag">Non-Linear Extensions</span>
-            <span class="tag">Real-Time Filtering</span>
-            <span class="tag">Estimation Theory</span>
-            <span class="tag">Stochastic Systems</span>
-            <span class="tag">Continuous-Time Methods</span>
-          </div>
-          <div class="header-links">
-            <a href="CV_Reka_Ratfai.pdf" class="btn btn-primary" target="_blank">View CV</a>
-            <a href="#research" class="btn btn-secondary">Research</a>
-            <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="btn btn-secondary">Email</a>
-          </div>
-        </div>
-        <div>
-          <img src="Profil.jpg" alt="Réka Rátfai" class="avatar">
-        </div>
-      </div>
-    </div>
-  </header>
+  <div class="page-wrap">
 
-  <section id="research">
-    <div class="container">
-      <p class="section-label">Research</p>
-      <div class="paper-list">
+    <div class="two-col" id="about">
 
-        <div class="paper" id="jmp">
-          <span class="paper-year">2026</span>
-          <div>
-            <div class="paper-title">
-              Real-Time Recovery of Structural Shocks from High-Frequency Data
-              <span class="jmp-badge">Job Market Paper</span>
-            </div>
-            <div class="paper-authors">Réka Rátfai</div>
-            <div class="paper-links">
-              <a href="RealTime_Tracker.pdf" class="paper-link" target="_blank">PDF</a>
-              <a href="https://ssrn.com/abstract=7374859" class="paper-link" target="_blank">SSRN</a>
-              <a href="https://dx.doi.org/10.2139/ssrn.7374859" class="paper-link" target="_blank">DOI</a>
+      <!-- LEFT: identity -->
+      <aside class="sidebar">
+        <img src="Profil.jpg" alt="Réka Rátfai" class="avatar">
+        <h1>Réka Rátfai</h1>
+        <p class="role">PhD Candidate &amp; Research Associate<br>Chair of Methods in Economics<br>University of Hamburg</p>
+        <p class="bio">
+          I am a PhD Candidate at the University of Hamburg, expected to complete my dissertation in 2026.
+          My research develops continuous-time methods and stochastic calculus to advance economic filtering techniques,
+          with applications in macroeconomics, asset pricing, and macro-finance.
+        </p>
+        <div class="sidebar-tags">
+          <span class="tag">Macroeconomic Theory</span>
+          <span class="tag">FTPL</span>
+          <span class="tag">New-Keynesian Modelling</span>
+          <span class="tag">DSGE</span>
+          <span class="tag">Linear Filtering</span>
+          <span class="tag">Non-Linear Extensions</span>
+          <span class="tag">Real-Time Filtering</span>
+          <span class="tag">Estimation Theory</span>
+          <span class="tag">Stochastic Systems</span>
+          <span class="tag">Continuous-Time Methods</span>
+        </div>
+        <div class="sidebar-links">
+          <a href="CV_Reka_Ratfai.pdf" class="btn btn-primary" target="_blank">View CV</a>
+          <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="btn btn-secondary">Email</a>
+        </div>
+      </aside>
+
+      <!-- RIGHT: research -->
+      <main class="main-col" id="research">
+        <p class="section-label">Research</p>
+        <div class="paper-list">
+
+          <div class="paper" id="jmp">
+            <span class="paper-year">2026</span>
+            <div>
+              <div class="paper-title">
+                Real-Time Recovery of Structural Shocks from High-Frequency Data
+                <span class="jmp-badge">Job Market Paper</span>
+              </div>
+              <div class="paper-authors">Réka Rátfai</div>
+              <div class="paper-links">
+                <a href="RealTime_Tracker.pdf" class="paper-link" target="_blank">PDF</a>
+                <a href="https://ssrn.com/abstract=7374859" class="paper-link" target="_blank">SSRN</a>
+                <a href="https://dx.doi.org/10.2139/ssrn.7374859" class="paper-link" target="_blank">DOI</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="paper">
-          <span class="paper-year">2026</span>
-          <div>
-            <div class="paper-title">
-              What Is in a Flow? Real-Time Filtering of Mixed Stock&#8211;Flow Systems. A Technical Note
-              <span class="status-badge">Technical Note</span>
-            </div>
-            <div class="paper-authors">Réka Rátfai</div>
-            <div class="paper-links">
-              <a href="technical_note.pdf" class="paper-link" target="_blank">PDF</a>
-              <a href="https://ssrn.com/abstract=7370661" class="paper-link" target="_blank">SSRN</a>
-              <a href="https://dx.doi.org/10.2139/ssrn.7370661" class="paper-link" target="_blank">DOI</a>
+          <div class="paper">
+            <span class="paper-year">2026</span>
+            <div>
+              <div class="paper-title">
+                What Is in a Flow? Real-Time Filtering of Mixed Stock&#8211;Flow Systems. A Technical Note
+                <span class="status-badge">Technical Note</span>
+              </div>
+              <div class="paper-authors">Réka Rátfai</div>
+              <div class="paper-links">
+                <a href="technical_note.pdf" class="paper-link" target="_blank">PDF</a>
+                <a href="https://ssrn.com/abstract=7370661" class="paper-link" target="_blank">SSRN</a>
+                <a href="https://dx.doi.org/10.2139/ssrn.7370661" class="paper-link" target="_blank">DOI</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="section-divider">Work in Progress</div>
+          <div class="section-divider">Work in Progress</div>
 
-        <div class="paper">
-          <span class="paper-year">—</span>
-          <div>
-            <div class="paper-title">
-              Resurrecting the New Keynesian Framework: A Linear Kalman&#8211;Bucy Approach
-              <span class="status-badge">In Progress</span>
+          <div class="paper">
+            <span class="paper-year">—</span>
+            <div>
+              <div class="paper-title">
+                Resurrecting the New Keynesian Framework: A Linear Kalman&#8211;Bucy Approach
+                <span class="status-badge">In Progress</span>
+              </div>
+              <div class="paper-authors">Juan-Carlos Parra-Alvarez, Olaf Posch, Réka Rátfai</div>
+              <p style="font-size:0.85rem; color:var(--muted);">Draft available upon request.</p>
             </div>
-            <div class="paper-authors">Juan-Carlos Parra-Alvarez, Olaf Posch, Réka Rátfai</div>
-            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
           </div>
-        </div>
 
-        <div class="paper">
-          <span class="paper-year">—</span>
-          <div>
-            <div class="paper-title">
-              Term Structure in the FTPL Model
-              <span class="status-badge">In Progress</span>
+          <div class="paper">
+            <span class="paper-year">—</span>
+            <div>
+              <div class="paper-title">
+                Term Structure in the FTPL Model
+                <span class="status-badge">In Progress</span>
+              </div>
+              <div class="paper-authors">Olaf Posch, Réka Rátfai</div>
+              <p style="font-size:0.85rem; color:var(--muted);">Draft available upon request.</p>
             </div>
-            <div class="paper-authors">Olaf Posch, Réka Rátfai</div>
-            <p style="font-size:0.88rem; color:var(--muted);">Draft available upon request.</p>
           </div>
+
         </div>
+      </main>
 
-      </div>
-    </div>
-  </section>
+    </div><!-- end two-col -->
 
-  <section id="conferences">
-    <div class="container">
+    <!-- FULL-WIDTH sections below -->
+
+    <div class="full-width" id="conferences">
       <p class="section-label">Conferences &amp; Presentations — 2026 · 4 events</p>
       <div class="paper-list">
 
@@ -264,19 +274,15 @@
 
       </div>
     </div>
-  </section>
 
-  <section id="code">
-    <div class="container">
+    <div class="full-width" id="code">
       <p class="section-label">Code &amp; Data</p>
       <div class="coming-soon">
         Code and replication files will be made available as papers are released.
       </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <div class="container">
+    <div class="full-width" id="contact">
       <p class="section-label">Contact</p>
       <div class="contact-block">
         <div class="contact-item">
@@ -298,27 +304,22 @@
         </div>
       </div>
     </div>
-  </section>
+
+  </div><!-- end page-wrap -->
 
   <footer>
-    <div class="container">
-      <p>&#169; 2026 Réka Rátfai · University of Hamburg · Last updated: November 2026</p>
-    </div>
+    <p>&#169; 2026 Réka Rátfai · University of Hamburg · Last updated: November 2026</p>
   </footer>
 
   <script>
-    // #cv in URL opens the PDF directly
     if (window.location.hash === "#cv") {
       window.location.replace("CV_Reka_Ratfai.pdf");
     }
-
-    const sections = document.querySelectorAll("section");
+    const els = document.querySelectorAll(".full-width");
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.08 });
-    sections.forEach(s => observer.observe(s));
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } });
+    }, { threshold: 0.06 });
+    els.forEach(el => observer.observe(el));
   </script>
 
 </body>
