@@ -28,11 +28,10 @@
 
     /* ── Banner ── */
     .jm-banner { background: var(--accent); color: #fff; padding: 0.85rem 2rem; text-align: center; }
-    .jm-banner-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-    .jm-left { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .jm-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.18); padding: 0.2rem 0.55rem; border-radius: 2px; white-space: nowrap; }
+    .jm-banner-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.45rem; }
+    .jm-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.18); padding: 0.2rem 0.55rem; border-radius: 2px; }
     .jm-text { font-family: var(--serif); font-size: 0.95rem; }
-    .jm-actions { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
+    .jm-actions { display: flex; gap: 0.75rem; align-items: center; margin-top: 0.1rem; }
     .jm-btn { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; text-decoration: none; padding: 0.35rem 0.85rem; border: 1px solid rgba(255,255,255,0.6); transition: background 0.2s; white-space: nowrap; }
     .jm-btn:hover { background: rgba(255,255,255,0.15); }
     .jm-btn-filled { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.8); }
@@ -128,10 +127,8 @@
 
   <div class="jm-banner">
     <div class="jm-banner-inner">
-      <div class="jm-left">
-        <span class="jm-label">2026 Job Market</span>
-        <span class="jm-text">I am on the European Job Market this year.</span>
-      </div>
+      <span class="jm-label">2026 Job Market</span>
+      <span class="jm-text">I am on the European Job Market this year.</span>
       <div class="jm-actions">
         <a href="CV_Reka_Ratfai.pdf" class="jm-btn jm-btn-filled" target="_blank">View CV</a>
         <a href="mailto:reka.ratfai&#64;uni-hamburg.de" class="jm-btn">Get in touch</a>
